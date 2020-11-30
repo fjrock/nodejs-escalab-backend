@@ -1,8 +1,16 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema;
 
+const AlbumItemSchema = new mongoose.Schema(
+    {
+      album: { type: ObjectId, ref: "Album" },
+    },
+    { timestamps: true }
+  );
+
 const artistSchema = new mongoose.Schema(
     {
+        albums: [AlbumItemSchema],
         name: {
             type: String,
             trim: true,
@@ -14,11 +22,6 @@ const artistSchema = new mongoose.Schema(
             type: String,
             required: true,
             maxlength: 2000
-        },
-        album: {
-            type: ObjectId,
-            ref: "Album",
-            required: true
         }
     },
     { timestamps: true }

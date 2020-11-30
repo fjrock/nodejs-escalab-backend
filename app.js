@@ -14,7 +14,7 @@ const swaggerUi = require("swagger-ui-express");
 const authRoutes = require("./routes/auth");
 const songRoutes = require("./routes/song");
 const albumRoutes = require("./routes/album");
-/*const productoRoutes = require("./routes/producto");*/
+const artistRoutes = require("./routes/artist");
 
 //app - express
 
@@ -87,8 +87,8 @@ appExpress.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 appExpress.use("/api",authRoutes);
 appExpress.use("/api",songRoutes);
 appExpress.use("/api",albumRoutes);
-/*appExpress.use("/api",productoRoutes);
-*/
+appExpress.use("/api",artistRoutes);
+
 
 //port 
 
