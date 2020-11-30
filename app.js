@@ -15,6 +15,7 @@ const authRoutes = require("./routes/auth");
 const songRoutes = require("./routes/song");
 const albumRoutes = require("./routes/album");
 const artistRoutes = require("./routes/artist");
+const genreRoutes = require("./routes/genre");
 
 //app - express
 
@@ -88,7 +89,7 @@ appExpress.use("/api",authRoutes);
 appExpress.use("/api",songRoutes);
 appExpress.use("/api",albumRoutes);
 appExpress.use("/api",artistRoutes);
-
+appExpress.use("/api",genreRoutes);
 
 //port 
 

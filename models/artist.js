@@ -8,9 +8,17 @@ const AlbumItemSchema = new mongoose.Schema(
     { timestamps: true }
   );
 
+const GenreItemSchema = new mongoose.Schema(
+    {
+      genre: { type: ObjectId, ref: "Genre" },
+    },
+    { timestamps: true }
+  );
+
 const artistSchema = new mongoose.Schema(
     {
         albums: [AlbumItemSchema],
+        genres: [GenreItemSchema],
         name: {
             type: String,
             trim: true,
