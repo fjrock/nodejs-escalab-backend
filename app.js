@@ -46,7 +46,7 @@ appExpress.use(cors());
 
 const swaggerOptions = {
   swaggerDefinition: {
-      openapi: '3.0.0',
+      openapi: '3.0.1',
       info: {
           version: "1.0.0",
           title: "Music API",
@@ -55,9 +55,20 @@ const swaggerOptions = {
               name: "escalab"
           },
           servers: ["http://localhost:8000"]
-      }
+      },components: {
+        securitySchemes: {
+          bearerAuth: {
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT',
+          }
+        }
+      },
+      security: [{
+        bearerAuth: []
+      }]
+    
   },
-
   apis: ['./routes/*.js']
 };
 
