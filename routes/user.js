@@ -19,7 +19,6 @@ router.get("/secret/:userId", requireSignin, isAuth, isAdmin, (req, res) => {
 
 router.get("/user/:userId", requireSignin, isAuth, read);
 router.put("/user/:userId", requireSignin, isAuth, update);
-router.get("/orders/by/user/:userId", requireSignin, isAuth, purchaseHistory);
 
 // params
 router.param("userId", userById);

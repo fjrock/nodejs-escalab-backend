@@ -15,7 +15,6 @@ const { userById } = require("../controllers/user");
 
 // routes
 router.get("/song/:songId", read);
-
 /**
  * @swagger   
  * /api/song/create/{userId}: 
@@ -44,20 +43,8 @@ router.get("/song/:songId", read);
  *         description: A bad request response
  */
 router.post("/song/create/:userId", requireSignin, isAuth, isAdmin, create);
-router.put(
-    "/song/:songId/:userId",
-    requireSignin,
-    isAuth,
-    isAdmin,
-    update
-);
-router.delete(
-    "/song/:songId/:userId",
-    requireSignin,
-    isAuth,
-    isAdmin,
-    remove
-);
+router.put("/song/:songId/:userId",requireSignin,isAuth,isAdmin,update);
+router.delete("/song/:songId/:userId",requireSignin,isAuth,isAdmin,remove);
 router.get("/songs", list);
 
 // params
