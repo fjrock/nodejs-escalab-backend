@@ -66,7 +66,17 @@ const swaggerOptions = {
       },
       security: [{
         bearerAuth: []
-      }]
+      }],
+       definitions: {
+        todosResponse: {
+            type: "object",
+            properties: {
+                "id": {
+                     type: "integer"
+                }
+            }
+        }
+      } 
     
   },
   apis: ['./routes/*.js']
