@@ -86,7 +86,7 @@ router.post("/song/create/:userId", requireSignin, isAuth, isAdmin, create);
  * @swagger   
  * /api/song/{songId}/{userId}: 
  *  put:
- *    summary: crear/actualizar cancion
+ *    summary: actualizar cancion
  *    parameters:
  *       - name: songId
  *         in: path
