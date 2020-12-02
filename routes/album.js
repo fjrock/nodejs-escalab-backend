@@ -14,7 +14,7 @@ const { requireSignin, isAuth, isAdmin } = require("../controllers/auth");
 const { userById } = require("../controllers/user");
 
 // routes
-router.get("/album/:albumId", read);
+router.get("/album/:albumId/:userId", read);
 router.post("/album/create/:userId", requireSignin, isAuth, isAdmin, create);
 router.put(
     "/album/:albumId/:userId",

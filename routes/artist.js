@@ -14,7 +14,7 @@ const { requireSignin, isAuth, isAdmin } = require("../controllers/auth");
 const { userById } = require("../controllers/user");
 
 // routes
-router.get("/artist/:artistId", read);
+router.get("/artist/:artistId/:userId", read);
 router.post("/artist/create/:userId", requireSignin, isAuth, isAdmin, create);
 router.put(
     "/artist/:artistId/:userId",

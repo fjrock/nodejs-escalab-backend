@@ -14,7 +14,31 @@ const { requireSignin, isAuth, isAdmin } = require("../controllers/auth");
 const { userById } = require("../controllers/user");
 
 // routes
-router.get("/song/:songId", read);
+
+/**
+ * @swagger   
+ * /api/song/{songId}/{userId}: 
+ *  get:
+ *    summary: obtener cancion
+ *    parameters:
+ *       - name: songId
+ *         in: path
+ *         description: Parametro cancion existente
+ *         schema:
+ *         type : String
+ *       - name: userId
+ *         in: path
+ *         description: Parametro usuario existente
+ *         schema:
+ *         type : String
+ *    description: request para obtener cancion
+ *    responses:
+ *      "200":
+ *         description: A successful response
+ *      "400":
+ *         description: A bad request response
+ */
+router.get("/song/:songId/:userId", requireSignin, isAuth, isAdmin, read);
 /**
  * @swagger   
  * /api/song/create/{userId}: 
@@ -26,7 +50,6 @@ router.get("/song/:songId", read);
  *         description: Parametro usuario existente
  *         schema:
  *           type : String
- *           minimum: 1
  *    description: request para crear cancion
  *    requestBody: 
  *      content:

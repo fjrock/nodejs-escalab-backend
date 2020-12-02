@@ -14,7 +14,7 @@ const { requireSignin, isAuth, isAdmin } = require("../controllers/auth");
 const { userById } = require("../controllers/user");
 
 // routes
-router.get("/genre/:genreId", read);
+router.get("/genre/:genreId:userId", read);
 router.post("/genre/create/:userId", requireSignin, isAuth, isAdmin, create);
 router.put(
     "/genre/:genreId/:userId",
