@@ -67,10 +67,19 @@ exports.isAuth = (req, res, next) => {
 };
 
 exports.isAdmin = (req, res, next) => {
-    if (req.profile.role === 0) {
-        return res.status(403).json({
-            error: "Admin resourse! Access denied"
-        });
-    } 
+console.log(req.profile.role[0]);
+
+console.log(req.profile.role === 0);
+
+    req.profile.role.forEach(function(element) {
+        if (element === 1) {
+            console.log("fuck");
+            return res.status(403).json({
+                error: "Admin resourse! Access denied"
+                
+            });
+        } 
+       
+    });
     next();
 };
