@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -27,5 +28,8 @@
     "swagger-jsdoc": "^3.4.0",
     "swagger-ui-express": "^4.0.7",
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0"
   }
 }
