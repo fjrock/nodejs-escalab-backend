@@ -61,7 +61,7 @@ exports.remove = (req, res) => {
 exports.list = (req, res) => {
     Album.find().exec((err, data) => {
         if (err) {
-            return res.status.json({
+            return res.status(400).json({
                 error: errorHandler(err)
             });
         }
